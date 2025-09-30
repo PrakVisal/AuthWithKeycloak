@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: spring-mini-2
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/spring-mini
+
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/postgres
+    password: 123
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+keycloak:
+  auth-server-url: http://localhost:8080
+  realm: spring-mini
+  resource: spring-rest-api
+  credentials:
+    secret: 544S27vJruhCZNFn8xbjKfnCvcmLIPDU
+#  admin:
+#    username: admin
+#    password: admin
+
+
+server:
+  port: 8081
